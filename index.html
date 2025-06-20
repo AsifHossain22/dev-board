@@ -50,9 +50,9 @@
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-2 bg-[#F4F7FF] p-3 rounded-2xl">
             <img src="./assets/checkbox.png" alt="Checkbox" class="w-6" />
-            <span class="text-xl font-bold">23</span>
+            <span id="task-completed-count" class="text-xl font-bold">23</span>
           </div>
-          <button class="hover:cursor-pointer">
+          <button id="random-bg-btn" class="hover:cursor-pointer">
             <img src="./assets/theme-btn.png" alt="Theme Button" class="w-10" />
           </button>
         </div>
@@ -79,7 +79,13 @@
             </div>
             <div>
               <p class="text-base text-[#00303C] font-medium">Task Assigned</p>
-              <span class="text-2xl text-[#00303C] font-bold">06</span>
+              <p class="text-2xl text-[#00303C] font-bold">
+                0<span
+                  id="task-assigned-count"
+                  class="text-2xl text-[#00303C] font-bold"
+                  >6</span
+                >
+              </p>
             </div>
           </div>
 
@@ -138,7 +144,8 @@
               </div>
               <!-- completedButton -->
               <button
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
+                id="task-1-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
               >
                 Completed
               </button>
@@ -168,7 +175,8 @@
               </div>
               <!-- completedButton -->
               <button
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
+                id="task-2-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
               >
                 Completed
               </button>
@@ -198,7 +206,8 @@
               </div>
               <!-- completedButton -->
               <button
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
+                id="task-3-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
               >
                 Completed
               </button>
@@ -228,7 +237,8 @@
               </div>
               <!-- completedButton -->
               <button
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
+                id="task-4-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
               >
                 Completed
               </button>
@@ -258,7 +268,8 @@
               </div>
               <!-- completedButton -->
               <button
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
+                id="task-5-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
               >
                 Completed
               </button>
@@ -288,7 +299,8 @@
               </div>
               <!-- completedButton -->
               <button
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
+                id="task-6-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
               >
                 Completed
               </button>
@@ -298,7 +310,7 @@
       </div>
 
       <!-- activityLogContainer -->
-      <div class="w-full lg:w-1/5 mt-6 pt-10 bg-white p-6 rounded-xl">
+      <div class="w-full lg:w-1/5 mt-6 pt-9 bg-white p-6 rounded-xl">
         <div class="border-b-2 border-dashed border-gray-300 pb-7">
           <div class="flex justify-center items-center gap-3">
             <img src="./assets/activity.png" alt="Activity Log" class="w-6" />
@@ -306,23 +318,35 @@
           </div>
           <div class="text-center mt-3">
             <button
+              id="clear-history-btn"
               class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer"
             >
               Clear History
             </button>
           </div>
         </div>
+        <div id="activity-log-history" class="pt-5">
+          <p class="p-5 mb-3 bg-[#F4F7FF] rounded-lg text-sm hidden">
+            You have completed the task <strong>"Task Title ID"</strong> at Real
+            Time
+          </p>
+        </div>
       </div>
     </main>
     <!-- mainEnd -->
 
     <!-- footerStart -->
-    <footer class="max-w-7xl mx-auto p-4 text-center text-gray-500 text-sm">
+    <footer
+      class="max-w-7xl mx-auto pt-4 md:pt-10 text-center text-gray-500 text-sm"
+    >
       <span> Hi ASIF &copy; 2025</span>
     </footer>
     <!-- footerEnd -->
 
     <!-- tailwindCSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- customScript -->
+    <script src="./utilities/utilities.js"></script>
+    <script src="./script/script.js"></script>
   </body>
 </html>
