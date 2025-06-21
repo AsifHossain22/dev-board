@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- siteTitle -->
-    <title>Dev Board</title>
+    <title>Learned Skills Board</title>
 
     <!-- sitIcon -->
     <link rel="icon" href="./assets/logo.png" type="image/x-icon" />
@@ -43,14 +43,18 @@
         <div class="flex items-center gap-2">
           <img src="./assets/logo.png" alt="Logo" class="w-10" />
           <a href="" class="text-3xl"
-            >Dev<span class="font-bold">Board</span></a
+            >Learned<span class="font-bold">Skills</span></a
           >
         </div>
         <!-- rightItem -->
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-2 bg-[#F4F7FF] p-3 rounded-2xl">
             <img src="./assets/checkbox.png" alt="Checkbox" class="w-6" />
-            <span id="task-completed-count" class="text-xl font-bold">23</span>
+            <p class="text-2xl font-bold">
+              0<span id="skill-completed-count" class="text-2xl font-bold"
+                >0</span
+              >
+            </p>
           </div>
           <button id="random-bg-btn" class="hover:cursor-pointer">
             <img src="./assets/theme-btn.png" alt="Theme Button" class="w-10" />
@@ -62,7 +66,7 @@
 
     <!-- mainStart -->
     <main
-      class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-6 min-h-screen"
+      class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-6"
     >
       <!-- mainContainer -->
       <div class="mt-6 bg-white p-6 rounded-xl w-full lg:w-4/5">
@@ -70,7 +74,7 @@
         <div
           class="border-b-2 border-dashed border-gray-300 pb-5 flex flex-col md:flex-row justify-between items-center gap-5"
         >
-          <!-- taskAssignedContainer -->
+          <!-- skillsContainer -->
           <div
             class="w-full md:w-1/3 flex items-center gap-5 bg-[#F4F7FF] p-6 rounded-2xl"
           >
@@ -78,27 +82,30 @@
               <img src="./assets/checkbox.png" alt="Checkbox" class="w-6" />
             </div>
             <div>
-              <p class="text-base text-[#00303C] font-medium">Task Assigned</p>
+              <p class="text-base text-[#00303C] font-medium">
+                Learning Skills
+              </p>
               <p class="text-2xl text-[#00303C] font-bold">
                 0<span
-                  id="task-assigned-count"
+                  id="skills-assigned-count"
                   class="text-2xl text-[#00303C] font-bold"
-                  >6</span
+                  >9</span
                 >
               </p>
             </div>
           </div>
 
-          <!-- discoverContainer -->
+          <!-- notesContainer -->
           <div
+            id="notes-container"
             class="w-full md:w-1/3 bg-gradient-to-r from-[#3752FD] via-[#6C7FFA] to-[#9BA8F8] flex items-center gap-5 p-6 rounded-2xl hover:cursor-pointer"
           >
             <div>
               <img src="./assets/board.png" alt="Board Icon" class="w-10" />
             </div>
             <p class="text-white text-lg md:text-xl font-medium">
-              Discover Something<br />
-              New Today!
+              Checkout my notes<br />
+              here!
             </p>
           </div>
 
@@ -109,28 +116,25 @@
             <div class="bg-white p-3 rounded-full">
               <img src="./assets/calender.png" alt="Calender" class="w-6" />
             </div>
-            <div>
-              <p class="text-base text-[#00303C] font-medium">Friday,</p>
-              <span class="text-xl text-[#00303C] font-bold"
-                >June 20, 2025</span
-              >
+            <div class="current-date">
+              <p class="text-base text-[#00303C] font-medium">Sunday,</p>
+              <span class="text-xl text-[#00303C] font-bold">June 1, 2025</span>
             </div>
           </div>
         </div>
 
-        <!-- tasksCardContainer -->
+        <!-- skillsCardContainer -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          <!-- taskCard - 1 -->
-          <div class="bg-[#F4F7FF] p-6 rounded-lg">
+          <!-- skillCard - 1 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
             <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
-              >ShopEase</span
+              >HTML</span
             >
-            <h2 class="text-[#00303C] text-2xl font-medium mt-4 mb-2">
-              Fix Mobile Button Issue
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              HyperText Markup Language
             </h2>
-            <p class="bg-white p-4 text-base text-[#000000] rounded-lg">
-              Debug using Chrome<br />
-              DevTools, check for overlappi...
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A markup language used for structuring web content.
             </p>
             <div
               class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
@@ -139,29 +143,28 @@
               <div>
                 <span class="text-sm text-[#00303C]">Deadline</span>
                 <p class="text-base text-[#00303C] font-medium">
-                  June 21, 2025
+                  December 31, 2025
                 </p>
               </div>
               <!-- completedButton -->
               <button
-                id="task-1-completed-btn"
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
               >
-                Completed
+                Complete
               </button>
             </div>
           </div>
-          <!-- taskCard - 2 -->
-          <div class="bg-[#F4F7FF] p-6 rounded-lg">
+          <!-- skillCard - 2 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
             <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
-              >CloudSync</span
+              >CSS</span
             >
-            <h2 class="text-[#00303C] text-2xl font-medium mt-4 mb-2">
-              Add Dark Mode
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              Cascading Style Sheets
             </h2>
-            <p class="bg-white p-4 text-base text-[#000000] rounded-lg">
-              Debug using Chrome<br />
-              DevTools, check for overlappi...
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A style sheet language used for describing the presentation of a
+              document written in HTML.
             </p>
             <div
               class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
@@ -170,29 +173,27 @@
               <div>
                 <span class="text-sm text-[#00303C]">Deadline</span>
                 <p class="text-base text-[#00303C] font-medium">
-                  June 21, 2025
+                  December 31, 2025
                 </p>
               </div>
               <!-- completedButton -->
               <button
-                id="task-2-completed-btn"
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
               >
-                Completed
+                Complete
               </button>
             </div>
           </div>
-          <!-- taskCard - 3 -->
-          <div class="bg-[#F4F7FF] p-6 rounded-lg">
+          <!-- skillCard - 3 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
             <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
-              >SwiftPay</span
+              >Tailwind</span
             >
-            <h2 class="text-[#00303C] text-2xl font-medium mt-4 mb-2">
-              Optimize Home page 
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              Tailwind CSS Framework
             </h2>
-            <p class="bg-white p-4 text-base text-[#000000] rounded-lg">
-              Debug using Chrome<br />
-              DevTools, check for overlappi...
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A utility-first CSS framework for creating custom designs.
             </p>
             <div
               class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
@@ -201,29 +202,27 @@
               <div>
                 <span class="text-sm text-[#00303C]">Deadline</span>
                 <p class="text-base text-[#00303C] font-medium">
-                  June 21, 2025
+                  December 31, 2025
                 </p>
               </div>
               <!-- completedButton -->
               <button
-                id="task-3-completed-btn"
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
               >
-                Completed
+                Complete
               </button>
             </div>
           </div>
-          <!-- taskCard - 4 -->
-          <div class="bg-[#F4F7FF] p-6 rounded-lg">
+          <!-- skillCard - 4 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
             <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
-              >Meta</span
+              >JavaScript</span
             >
-            <h2 class="text-[#00303C] text-2xl font-medium mt-4 mb-2">
-              Add new emoji 🤲
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              JavaScript Programming Language
             </h2>
-            <p class="bg-white p-4 text-base text-[#000000] rounded-lg">
-              Debug using Chrome<br />
-              DevTools, check for overlappi...
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A programming language used for web development.
             </p>
             <div
               class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
@@ -232,29 +231,28 @@
               <div>
                 <span class="text-sm text-[#00303C]">Deadline</span>
                 <p class="text-base text-[#00303C] font-medium">
-                  June 21, 2025
+                  December 31, 2025
                 </p>
               </div>
               <!-- completedButton -->
               <button
-                id="task-4-completed-btn"
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
               >
-                Completed
+                Complete
               </button>
             </div>
           </div>
-          <!-- taskCard - 5 -->
-          <div class="bg-[#F4F7FF] p-6 rounded-lg">
+          <!-- skillCard - 5 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
             <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
-              >Google LLC</span
+              >React JS</span
             >
-            <h2 class="text-[#00303C] text-2xl font-medium mt-4 mb-2">
-              Integrate OpenAI API
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              React JavaScript Library
             </h2>
-            <p class="bg-white p-4 text-base text-[#000000] rounded-lg">
-              Debug using Chrome<br />
-              DevTools, check for overlappi...
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A JavaScript library<br />
+              for building user interfaces.
             </p>
             <div
               class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
@@ -263,29 +261,28 @@
               <div>
                 <span class="text-sm text-[#00303C]">Deadline</span>
                 <p class="text-base text-[#00303C] font-medium">
-                  June 21, 2025
+                  December 31, 2025
                 </p>
               </div>
               <!-- completedButton -->
               <button
-                id="task-5-completed-btn"
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
               >
-                Completed
+                Complete
               </button>
             </div>
           </div>
-          <!-- taskCard - 6 -->
-          <div class="bg-[#F4F7FF] p-6 rounded-lg">
+          <!-- skillCard - 6 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
             <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
-              >Glass Dora</span
+              >Firebase</span
             >
-            <h2 class="text-[#00303C] text-2xl font-medium mt-4 mb-2">
-              Improve Job searching
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              Firebase Backend Service
             </h2>
-            <p class="bg-white p-4 text-base text-[#000000] rounded-lg">
-              Debug using Chrome<br />
-              DevTools, check for overlappi...
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A platform for building mobile and web applications with a
+              real-time database.
             </p>
             <div
               class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
@@ -294,15 +291,102 @@
               <div>
                 <span class="text-sm text-[#00303C]">Deadline</span>
                 <p class="text-base text-[#00303C] font-medium">
-                  June 21, 2025
+                  December 31, 2025
                 </p>
               </div>
               <!-- completedButton -->
               <button
-                id="task-6-completed-btn"
-                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
               >
-                Completed
+                Complete
+              </button>
+            </div>
+          </div>
+          <!-- skillCard - 7 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
+            <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
+              >NodeJS</span
+            >
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              NodeJS Backend Service
+            </h2>
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A JavaScript runtime built on Chrome's V8 JavaScript engine.
+            </p>
+            <div
+              class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
+            >
+              <!-- timeContent -->
+              <div>
+                <span class="text-sm text-[#00303C]">Deadline</span>
+                <p class="text-base text-[#00303C] font-medium">
+                  December 31, 2025
+                </p>
+              </div>
+              <!-- completedButton -->
+              <button
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
+              >
+                Complete
+              </button>
+            </div>
+          </div>
+          <!-- skillCard - 8 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
+            <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
+              >Next.js</span
+            >
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              Next.js Backend Service
+            </h2>
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A React framework for building server-side rendered applications.
+            </p>
+            <div
+              class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
+            >
+              <!-- timeContent -->
+              <div>
+                <span class="text-sm text-[#00303C]">Deadline</span>
+                <p class="text-base text-[#00303C] font-medium">
+                  December 31, 2025
+                </p>
+              </div>
+              <!-- completedButton -->
+              <button
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
+              >
+                Complete
+              </button>
+            </div>
+          </div>
+          <!-- skillCard - 9 -->
+          <div class="bg-[#F4F7FF] p-6 rounded-lg skillCard">
+            <span class="bg-white text-[#00303C] text-base px-3 py-2 rounded-xl"
+              >MongoDB</span
+            >
+            <h2 class="text-[#00303C] text-xl font-medium mt-4 mb-2">
+              MongoDB Database Service
+            </h2>
+            <p class="bg-white p-4 text-xs text-[#000000] rounded-lg">
+              A NoSQL database for<br />
+              storing and retrieving data.
+            </p>
+            <div
+              class="flex justify-between items-center border-t-2 border-dashed border-gray-300 pt-4 mt-4"
+            >
+              <!-- timeContent -->
+              <div>
+                <span class="text-sm text-[#00303C]">Deadline</span>
+                <p class="text-base text-[#00303C] font-medium">
+                  December 31, 2025
+                </p>
+              </div>
+              <!-- completedButton -->
+              <button
+                class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer skills-completed-btn"
+              >
+                Complete
               </button>
             </div>
           </div>
@@ -326,10 +410,10 @@
           </div>
         </div>
         <div id="activity-log-history" class="pt-5">
-          <p class="p-5 mb-3 bg-[#F4F7FF] rounded-lg text-sm hidden">
+          <!-- <p class="p-5 mb-3 bg-[#F4F7FF] rounded-lg text-sm hidden">
             You have completed the task <strong>"Task Title ID"</strong> at Real
             Time
-          </p>
+          </p> -->
         </div>
       </div>
     </main>

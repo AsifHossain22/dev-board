@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- siteTitle -->
+    <title>Learned Skills - Notes</title>
+
+    <!-- sitIcon -->
+    <link rel="icon" href="./assets/logo.png" type="image/x-icon" />
+
+    <!-- googleFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- customStyles -->
+    <style>
+      body {
+        font-family: "Asap Condensed", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F4F7FF] p-4 sm:p-6 lg:p-10 overflow-x-hidden">
+    <!-- headerStart -->
+    <header class="max-w-7xl mx-auto">
+      <!-- navBar -->
+      <div
+        class="flex flex-wrap md:flex-nowrap justify-between items-center bg-white px-6 py-4 rounded-xl gap-4"
+      >
+        <!-- leftItem -->
+        <div class="flex items-center gap-2">
+          <img src="./assets/logo.png" alt="Logo" class="w-10" />
+          <a href="" class="text-3xl">My<span class="font-bold">Notes</span></a>
+        </div>
+        <!-- rightItem -->
+        <div class="">
+          <a
+            href="./index.html"
+            class="bg-[#3752FD] rounded-lg px-5 py-2 text-white text-base font-medium border-2 border-transparent hover:bg-transparent hover:text-[#3752FD] hover:border-[#3752FD] transition duration-300 hover:cursor-pointer task-completed-btn"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- headerEnd -->
+
+    <!-- mainStart -->
+    <main class="max-w-7xl mx-auto">
+      <!-- blogSection -->
+      <section class="mt-10">
+        <div class="join join-vertical bg-base-100 w-full rounded-xl p-3">
+          <div class="collapse collapse-arrow join-item">
+            <input type="radio" name="my-accordion-4" checked="checked" />
+            <div class="collapse-title font-semibold">
+              What are the different ways to select an element in the DOM?
+            </div>
+            <div class="collapse-content text-sm border-base-300 border-t pt-5">
+              <p>1. "document.getElementById" - Select an element by its ID.</p>
+              <p>
+                2. "document.getElementsByClassName" - Select elements by their
+                class name.
+              </p>
+              <p>
+                3. "document.getElementsByTagName" - Select elements by their
+                tag name.
+              </p>
+              <p>
+                4. "document.querySelector" - Select the first element that
+                matches a CSS selector.
+              </p>
+              <p>
+                5. "document.querySelectorAll" - Select all elements that match
+                a CSS selector.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title font-semibold">
+              What is the difference between innerHTML, innerText and
+              textContent?
+            </div>
+            <div class="collapse-content text-sm border-base-300 border-t pt-5">
+              <p>
+                - innerHTML: Returns the HTML content of an element, including
+                any child elements.
+              </p>
+              <p>
+                - innerText: Returns the visible text content of an element,
+                excluding any HTML tags.
+              </p>
+              <p>
+                - textContent: Similar to innerText, but returns the text
+                content of all elements, including hidden ones.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title font-semibold">
+              What is event delegation in the DOM?
+            </div>
+            <div class="collapse-content text-sm border-base-300 border-t pt-5">
+              <p>
+                Event delegation is a technique in which a single event listener
+                is added to a parent element instead of individual child
+                elements. This allows the parent to handle events for all its
+                children, improving performance and reducing memory usage. When
+                an event occurs, it bubbles up to the parent, which can then
+                determine the target element and respond accordingly.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title font-semibold">
+              What is event bubbling in the DOM?
+            </div>
+            <div class="collapse-content text-sm border-base-300 border-t pt-5">
+              <p>
+                Event bubbling is a mechanism in the DOM where an event starts
+                from the target element and bubbles up to its parent node.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- mainEnd -->
+
+    <!-- footerStart -->
+    <footer
+      class="max-w-7xl mx-auto pt-4 md:pt-10 text-center text-gray-500 text-sm"
+    >
+      <span> Hi ASIF &copy; 2025</span>
+    </footer>
+    <!-- footerEnd -->
+
+    <!-- tailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- customScript -->
+    <script src="./utilities/utilities.js"></script>
+    <script src="./script/script.js"></script>
+  </body>
+</html>

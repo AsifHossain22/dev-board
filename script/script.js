@@ -1,16 +1,12 @@
-// backgroundColorChange (you can customize)
+// backgroundColorChangeFeature
 const bgColors = [
   "red",
   "green",
   "blue",
+  "black",
   "yellow",
   "orange",
   "purple",
-  "pink",
-  "cyan",
-  "black",
-  "gray",
-  "teal",
 ];
 
 document.getElementById("random-bg-btn").addEventListener("click", function () {
@@ -19,11 +15,18 @@ document.getElementById("random-bg-btn").addEventListener("click", function () {
   document.body.style.backgroundColor = randomColor;
 });
 
-const completedButtons = document.getElementsByClassName("task-completed-btn");
+// skillsCompletedButtonFeature
+const completedButtons = document.getElementsByClassName(
+  "skills-completed-btn"
+);
 
 for (const completedBtn of completedButtons) {
   completedBtn.addEventListener("click", function () {
-    // disableButton
+    // alertFeature
+    alert("Learned Skills board updated successfully!");
+
+    // disabledButtonFeature
+    completedBtn.innerText = "Completed";
     completedBtn.disabled = true;
     completedBtn.classList.add("opacity-50", "cursor-not-allowed");
     completedBtn.classList.remove(
@@ -33,14 +36,45 @@ for (const completedBtn of completedButtons) {
       "hover:cursor-pointer"
     );
 
-    // incrementCompletedTask
-    const taskCompleted = getInnerTextById("task-completed-count");
-    const totalTaskCompleted = taskCompleted + 1;
-    setInnerTextByIdAndValue("task-completed-count", totalTaskCompleted);
+    // decrementSkillAssignedFeature
+    const skillAssigned = getInnerTextByIdAndConvertToNumber(
+      "skills-assigned-count"
+    ); // usingUtilities
+    const remainingSkillAssigned = skillAssigned - 1;
+    setInnerTextByIdAndValue("skills-assigned-count", remainingSkillAssigned); // usingUtilities
 
-    // decrementTaskAssigned
-    const taskAssigned = getInnerTextById("task-assigned-count");
-    const remainingTaskAssigned = taskAssigned - 1;
-    setInnerTextByIdAndValue("task-assigned-count", remainingTaskAssigned);
+    // incrementCompletedSkillFeature
+    const skillCompleted = getInnerTextByIdAndConvertToNumber(
+      "skill-completed-count"
+    ); // usingUtilities
+    const totalSkillCompleted = skillCompleted + 1;
+    setInnerTextByIdAndValue("skill-completed-count", totalSkillCompleted); // usingUtilities
   });
 }
+
+// activityLogFeature
+const activityLogContainer = document.getElementById("activity-log-history");
+const clearHistoryBtn = document.getElementById("clear-history-btn");
+
+for (const completedBtn of completedButtons) {
+  completedBtn.addEventListener("click", function () {
+    const cardTitle = this.closest(".skillCard").querySelector("h2").innerText;
+    const activityLogItem = document.createElement("p"); // createElement
+    activityLogItem.className = "p-5 mb-3 bg-[#F4F7FF] rounded-lg text-sm";
+    const time = new Date().toLocaleTimeString(); // localTime
+    activityLogItem.innerHTML = `You have completed the task <strong>"${cardTitle}"</strong> at ${time}`;
+    activityLogContainer.appendChild(activityLogItem);
+  });
+}
+
+clearHistoryBtn.addEventListener("click", function () {
+  activityLogContainer.innerHTML = ""; // clearActivityLogHistory
+  location.reload(); // reloadThePage
+});
+
+// goToNotesPage
+document
+  .getElementById("notes-container")
+  .addEventListener("click", function () {
+    window.location.href = "../notes.html";
+  });
